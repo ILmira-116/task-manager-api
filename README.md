@@ -9,6 +9,8 @@ HTTP-сервис для управления задачами, имитирую
 ### 1. Клонировать репозиторий
 
 git clone https://github.com/yourname/task-manager-api.git
+
+### Перейти в папку с проектом:
 cd task-manager-api
 
 ### 2. Установить зависимости
@@ -26,12 +28,12 @@ POST /tasks
 
 ## Ответ:
 
-
 {
   "id": "99caf2c0-76bd-49bd-930c-c86860e8bb6d",
   "status": "pending",
   "created_at": "2025-06-23T16:00:02.123Z"
-}
+} 
+
 GET /tasks/{id}
 Получает статус задачи по ID.
 
@@ -45,10 +47,10 @@ GET /tasks/{id}
   "finished_at": "2025-06-23T16:03:08.000Z",
   "duration": "3m5s"
 }
+
+
 DELETE /tasks/{id}
 Удаляет задачу.
-Успех: 204 No Content
-Если не найдена: 404 Not Found
 
 ### Тестирование через Insomnia
 
@@ -63,19 +65,6 @@ GET http://localhost:8080/tasks/{id} — получить статус
 DELETE http://localhost:8080/tasks/{id} — удалить задачу
 
 Отправь запрос и наблюдай за логами и результатами
-
-### Структура проекта
-
-.
-├── cmd/                # main.go — запуск сервера
-├── internal/
-│   ├── handlers/       # HTTP-обработчики
-│   ├── tasks/          # Модель задачи, хранилище, запуск
-│   ├── processing/     # Симуляция I/O-bound задач
-│   └── logger/         # Логирование
-├── router/             # Настройка маршрутов и middleware
-├── config/             # Конфигурация (опционально)
-└── README.md
 
 ### Примечания
 Все данные хранятся в памяти (без базы данных)
